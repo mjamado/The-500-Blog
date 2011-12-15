@@ -1,0 +1,33 @@
+@import "compass/reset";
+@import "compass/typography/vertical_rhythm";
+@import "compass/typography/links";
+@import "compass/typography/lists";
+@import "compass/css3";
+
+$base-font-size: 14px;
+$line-height-multiplier: 1.5000;
+$base-line-height: $base-font-size*$line-height-multiplier;
+@include establish-baseline;
+
+$header1-font-size: 4.3333em;
+$header2-font-size: 2.6666em;
+
+$small-font-size: 0.8333em;
+
+$font-color: #333333;
+$light-color: #aaa;
+$ultra-light-color: #eee;
+
+$copy-font-family: 'Trebuchet MS', Helvetica, sans-serif;
+$header-font-family: Georgia, serif;
+
+@mixin auto-line-height($font-size)
+{
+	line-height: ((ceil(($base-font-size*$font-size)/$base-line-height)*$base-line-height)/($base-font-size*$font-size));
+}
+
+@mixin vertical-margin($top, $bottom, $font-size)
+{
+	$multiplier: (ceil(($base-font-size*$font-size)/$base-line-height)/$font-size);
+	margin: $multiplier*$top 0 $multiplier*$bottom 0;
+}

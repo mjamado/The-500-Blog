@@ -1,0 +1,13 @@
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ %{REQUEST_FILENAME} [L]
+
+RewriteRule ^admin/?([a-z]+)?/?([a-z]+)?/?([a-z0-9-_]+)?/? index.php?admin=1&controller=$1&action=$2&id=$3&%{QUERY_STRING} [NC,L]
+RewriteRule ^categories/?([a-z0-9-_]+)?/? index.php?controller=Main&action=ViewCategory&slug=$1&%{QUERY_STRING} [NC,L]
+RewriteRule ^([a-z0-9-_]+)/? index.php?controller=Main&action=ViewPost&slug=$1&%{QUERY_STRING} [NC,L]
+RewriteRule ^/? index.php?controller=Main&action=Index&%{QUERY_STRING} [NC,L]
+</IfModule>

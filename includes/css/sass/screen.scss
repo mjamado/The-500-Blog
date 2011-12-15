@@ -1,0 +1,241 @@
+@import "partials/base";
+
+body
+{
+	font-family: $copy-font-family;
+	color: $font-color;
+	padding: 0 0.5em;
+	@include box-sizing(border-box);
+}
+
+strong
+{
+	font-weight: bold;
+}
+
+h1,h2
+{
+	font-family: $header-font-family;
+	font-weight: bold;
+	@include single-text-shadow($light-color, 4px, 4px, 10px);
+}
+
+h1
+{
+	font-size: $header1-font-size;
+	@include auto-line-height($header1-font-size);
+	@include vertical-margin(1em, 1em, $header1-font-size);
+}
+
+h2
+{
+	font-size: $header2-font-size;
+	@include auto-line-height($header2-font-size);
+	@include vertical-margin(1em, 1em, $header2-font-size);
+}
+
+p
+{
+	margin: 1.5em 0;
+}
+
+article
+{
+	border: 1px solid $light-color;
+	@include border-radius(10px);
+	@include vertical-margin(1em, 1em, $base-font-size);
+	padding: 0 1em;
+}
+
+section h1, article h1
+{
+	font-size: $header2-font-size;
+	@include auto-line-height($header2-font-size);
+	@include vertical-margin(0, 1em, $header2-font-size);
+}
+
+a{ @include link-colors($font-color, $font-color, $font-color, $font-color, $font-color); }
+
+.main
+{
+	float: left;
+	width: 61.8%;
+}
+
+.sidebar
+{
+	float: right;
+	width: 37%;
+	padding-left: 1.2%;
+	min-width: 30em;
+	padding-left: 1em;
+	ul
+	{
+		@include no-bullets;
+		border: 1px solid $light-color;
+		@include border-radius(10px);
+		padding: 1em;
+		@include vertical-margin(1em, 1em, $base-font-size);
+	}
+	.lastComments p
+	{
+		margin-top: 0;
+	}
+}
+
+li.separator
+{
+	font-size: $header2-font-size;
+	@include auto-line-height($header2-font-size);
+	@include single-text-shadow($light-color, 4px, 4px, 10px);
+}
+
+.pubdate, .categories, .paginator
+{
+	font-size: $small-font-size;
+	@include auto-line-height($small-font-size);
+}
+
+.pubdate
+{
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.paginator
+{
+	text-align: right;
+}
+
+nav
+{
+	margin-bottom: 1em;
+	ul
+	{
+		@include no-bullets;
+		li
+		{
+			display: inline-block;
+		}
+	}
+	a
+	{
+		display: block;
+		text-decoration: none;
+		line-height: 2em;
+		border: 1px solid $light-color;
+		@include border-radius(4px);
+		padding: 0 0.5em;
+		@include background-image(linear-gradient(top, #fff, #ccc));
+		&:hover
+		{
+			@include background-image(linear-gradient(bottom, #fff, #ccc));
+		}
+	}
+}
+
+table
+{
+	width: 100%;
+	td
+	{
+		line-height: 2em;
+		padding: 0 0.5em;
+		border-bottom: 1px solid $light-color;
+	}
+	thead
+	{
+		font-weight: bold;
+		td
+		{
+			text-align: center;
+			@include background-image(linear-gradient(top, #fff, #ccc));
+			a
+			{
+				text-decoration: none;
+				&:hover
+				{
+					text-decoration: underline;
+				}
+			}
+			.orderNone:after
+			{
+				content: "";
+				width: 0;
+				height: 0;
+				border-top: 6px solid transparent;
+				border-bottom: 6px solid transparent;
+				border-left: 6px solid $light-color;
+				display: inline-block;
+				margin-left: 0.5em;
+			}
+			.orderASC:after
+			{
+				content: "";
+				width: 0;
+				height: 0;
+				border-left: 6px solid transparent;
+				border-bottom: 6px solid $light-color;
+				border-right: 6px solid transparent;
+				display: inline-block;
+				margin-left: 0.5em;
+			}
+			.orderDESC:after
+			{
+				content: "";
+				width: 0;
+				height: 0;
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				border-top: 6px solid $light-color;
+				display: inline-block;
+				margin-left: 0.5em;
+			}
+		}
+	}
+	tbody tr:nth-child(even)
+	{
+		background-color: $ultra-light-color;
+	}
+}
+
+ul.form
+{
+	@include no-bullets;
+	li
+	{
+		margin-bottom: 0.75em;
+		label:first-child
+		{
+			display: inline-block;
+			width: 16em;
+			text-align: right;
+			font-weight: bold;
+		}
+		input[type="text"], input[type="password"], input[type="select"], input[type="submit"], textarea
+		{
+			width: 20em;
+			height: 2em;
+			border: 1px solid $light-color;
+			@include border-radius(4px);
+			padding: 0 0.5em;
+		}
+		input[type="submit"]
+		{
+			width: 6em;
+			height: 2em;
+			margin-left: 17em;
+		}
+		textarea
+		{
+			font-family: $copy-font-family;
+			width: 30em;
+			height: 12em;
+			vertical-align: top;
+		}
+		input[type="checkbox"]:first-child
+		{
+			margin-left: 17em;
+		}
+	}
+}

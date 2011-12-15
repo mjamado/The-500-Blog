@@ -25,6 +25,17 @@ class Comment extends Formen
 
 	public function onBeforeSave()
 	{
+		/**
+		 * This is crap. It's witholding our users from posting rich text
+		 * comments, and that's plain bad. However, it's the simplest way of
+		 * cleaning potential XSS attacks (not all, though).
+		 *
+		 * A much better way is to use Edward Yang's awsome HTML Purifier.
+		 * Why didn't I use it? Well, because it's written in PHP, hence
+		 * counting towards the line count - and it's a big ass library...
+		 *
+		 * Anyway, for educational purposes, this simple control suffices.
+		 */
 		$this->content = htmlentities($this->content, ENT_QUOTES, 'UTF-8');
 
 		if(!isset($this->_id))

@@ -46,7 +46,7 @@ in this post¹ at Portugal-a-Programar (P@P). The first (and second) answer was,
 as predictable, a suggestion to use WordPress (by the P@P Admin himself).
 
 It started a mini-flamewar, of course. It's a programming forum, after all, and
-maybe a little more help were in order. However, the original poster had
+maybe a little more help was in order. However, the original poster had
 allready plagued the forum with nonsensical questions, showing a complete lack
 of work ethic or just plain Google-savvyness.
 
@@ -96,7 +96,7 @@ database. Access data should be altered in "core/PDOSingleton.class.php".
 The blog will only work with the provided ".htaccess" file. I really wanted to
 use human (and SEO) friendly URLs, hence the need for the rules on that file.
 
-Also, I included an favicon.ico, because browsers keep trying to fetch it, and
+Also, I included a favicon.ico, because browsers keep trying to fetch it, and
 it made another request to the web application. If the file exists, it lightens
 the load a little bit.
 

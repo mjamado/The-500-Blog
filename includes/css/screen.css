@@ -1,1 +1,68 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}body{font-size:87.5%;line-height:1.5em}html > body{font-size:14px}body{font-family:"Trebuchet MS",Helvetica,sans-serif;color:#333;padding:0 0.5em;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}strong{font-weight:bold}h1,h2{font-family:Georgia,serif;font-weight:bold;text-shadow:#aaa 4px 4px 10px}h1{font-size:4.333em;line-height:1.038;margin:0.692em 0 0.692em 0}h2{font-size:2.667em;line-height:1.125;margin:0.75em 0 0.75em 0}p{margin:1.5em 0}article{border:1px solid #aaa;-moz-border-radius:10px;-webkit-border-radius:10px;-o-border-radius:10px;-ms-border-radius:10px;-khtml-border-radius:10px;border-radius:10px;margin:0.714em 0 0.714em 0;padding:0 1em}section h1,article h1{font-size:2.667em;line-height:1.125;margin:0 0 0.75em 0}a{color:#333}a:visited{color:#333}a:focus{color:#333}a:hover{color:#333}a:active{color:#333}.main{float:left;width:61.8%}.sidebar{float:right;width:37%;padding-left:1.2%;min-width:30em;padding-left:1em}.sidebar ul{list-style:none;border:1px solid #aaa;-moz-border-radius:10px;-webkit-border-radius:10px;-o-border-radius:10px;-ms-border-radius:10px;-khtml-border-radius:10px;border-radius:10px;padding:1em;margin:0.714em 0 0.714em 0}.sidebar ul li{list-style-image:none;list-style-type:none;margin-left:0px}.sidebar .lastComments p{margin-top:0}li.separator{font-size:2.667em;line-height:1.125;text-shadow:#aaa 4px 4px 10px}.pubdate,.categories,.paginator{font-size:0.833em;line-height:1.8}.pubdate{font-weight:bold;margin-bottom:0}.paginator{text-align:right}nav{margin-bottom:1em}nav ul{list-style:none}nav ul li{list-style-image:none;list-style-type:none;margin-left:0px}nav ul li{display:inline-block}nav a{display:block;text-decoration:none;line-height:2em;border:1px solid #aaa;-moz-border-radius:4px;-webkit-border-radius:4px;-o-border-radius:4px;-ms-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;padding:0 0.5em;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #cccccc));background-image:-webkit-linear-gradient(top, #ffffff,#cccccc);background-image:-moz-linear-gradient(top, #ffffff,#cccccc);background-image:-o-linear-gradient(top, #ffffff,#cccccc);background-image:-ms-linear-gradient(top, #ffffff,#cccccc);background-image:linear-gradient(top, #ffffff,#cccccc)}nav a:hover{background-image:-webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ffffff), color-stop(100%, #cccccc));background-image:-webkit-linear-gradient(bottom, #ffffff,#cccccc);background-image:-moz-linear-gradient(bottom, #ffffff,#cccccc);background-image:-o-linear-gradient(bottom, #ffffff,#cccccc);background-image:-ms-linear-gradient(bottom, #ffffff,#cccccc);background-image:linear-gradient(bottom, #ffffff,#cccccc)}table{width:100%}table td{line-height:2em;padding:0 0.5em;border-bottom:1px solid #aaa}table thead{font-weight:bold}table thead td{text-align:center;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #cccccc));background-image:-webkit-linear-gradient(top, #ffffff,#cccccc);background-image:-moz-linear-gradient(top, #ffffff,#cccccc);background-image:-o-linear-gradient(top, #ffffff,#cccccc);background-image:-ms-linear-gradient(top, #ffffff,#cccccc);background-image:linear-gradient(top, #ffffff,#cccccc)}table thead td a{text-decoration:none}table thead td a:hover{text-decoration:underline}table thead td .orderNone:after{content:"";width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:6px solid #aaa;display:inline-block;margin-left:0.5em}table thead td .orderASC:after{content:"";width:0;height:0;border-left:6px solid transparent;border-bottom:6px solid #aaa;border-right:6px solid transparent;display:inline-block;margin-left:0.5em}table thead td .orderDESC:after{content:"";width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid #aaa;display:inline-block;margin-left:0.5em}table tbody tr:nth-child(even){background-color:#eee}ul.form{list-style:none}ul.form li{list-style-image:none;list-style-type:none;margin-left:0px}ul.form li{margin-bottom:0.75em}ul.form li label:first-child{display:inline-block;width:16em;text-align:right;font-weight:bold}ul.form li input[type="text"],ul.form li input[type="password"],ul.form li input[type="select"],ul.form li input[type="submit"],ul.form li textarea{width:20em;height:2em;border:1px solid #aaa;-moz-border-radius:4px;-webkit-border-radius:4px;-o-border-radius:4px;-ms-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;padding:0 0.5em}ul.form li input[type="submit"]{width:6em;height:2em;margin-left:17em}ul.form li textarea{font-family:"Trebuchet MS",Helvetica,sans-serif;width:30em;height:12em;vertical-align:top}ul.form li input[type="checkbox"]:first-child{margin-left:17em}
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}

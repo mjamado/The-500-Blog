@@ -1,0 +1,204 @@
+0. TABLE OF CONTENTS
+====================
+
+0. Table of Contents
+1. Author and License
+2. Disclaimer
+3. The challenge
+4. Installation
+5. Files where you have to mess around
+6. Random notes
+
+
+
+1. Author and License
+=====================
+
+Marco Amado <mjamado@dreamsincode.com>
+
+Creative Commons 2.5 Portugal BY-NC-SA
+
+
+
+2. Disclaimer
+=============
+
+This is NOT production-ready. I cannot stress this enough.
+
+It wasn't tested thoroughly, it wasn't measured performance wise, it didn't
+even been tested for less than common attack vectors.
+
+It's an educational proof-of-concept, and nothing more than that. If what you
+need is just a blog engine, use Wordpress or the likes. If you really want to
+make you own blog, at least use a mature framework, like Yii, Kohana, CakePHP
+or whatever floats yout boat.
+
+If you really, really, really want to use this work, you've been forewarned.
+Just honor the license.
+
+
+
+3. The challenge
+================
+
+It all started when a newbie programmer asked for directions for making a blog,
+in this post¹ at Portugal-a-Programar (P@P). The first (and second) answer was,
+as predictable, a suggestion to use WordPress (by the P@P Admin himself).
+
+It started a mini-flamewar, of course. It's a programming forum, after all, and
+maybe a little more help were in order. However, the original poster had
+allready plagued the forum with nonsensical questions, showing a complete lack
+of work ethic or just plain Google-savvyness.
+
+The third and fourth responses started the challenge: first, member taviroquai
+stated that "a simple blog would give about 50 lines but at least the person
+would learn something", to which the Admin jpaulino retorted "go for it,
+explain how to do a blog in 50 lines; if you make it under 500, I'll buy a
+drink".
+
+taviroquai presented a "blog" (notice the quotes) in under 50 lines, allright.
+It had posts. Period. No users. No categories. No comments. Just an admin
+page, and a never-ending front page. AND, he used an external ORM engine.
+
+Cheater. :p
+
+So, I setted myself the rules of the challenge (the admin splitted the post
+after the flamewar, the challenge followed in this one²):
+
+	i.		No external libraries;
+	ii.		Administration zone;
+	iii.	Support for categories and/or tags;
+	iv.		Support for commentaries (but not necessarily administrate them);
+	v.		HTML counts for the 500 limit;
+	vi.		CSS & JS don't count;
+	vii.	Several instructions on the same line are prohibited, except for
+			string concatenations, flow control instructions with only one
+			child, and similar situations;
+	viii.	HTML must be properly formatted and idented (exceptions for only
+			one element inside another).
+
+First I said it wouldn't fit if I followed best practices. When I started
+(with best practices), I reviewed my position to "it might fit". Near
+completion, again I think it won't fit (as of this writing, I have yet to
+remove comments, extra line breaks and "flag style" the brackets in this code).
+
+¹ http://www.portugal-a-programar.org/forum/index.php/topic,60815.0.html
+² http://www.portugal-a-programar.org/forum/index.php/topic,60822.0.html
+
+
+
+4. Installation
+===============
+
+The data structure is in the file "500blog.sql". Just import it into a MySQL
+database. Access data should be altered in "core/PDOSingleton.class.php".
+
+The blog will only work with the provided ".htaccess" file. I really wanted to
+use human (and SEO) friendly URLs, hence the need for the rules on that file.
+
+Also, I included an favicon.ico, because browsers keep trying to fetch it, and
+it made another request to the web application. If the file exists, it lightens
+the load a little bit.
+
+Although the folder structure I used while developing is the one you see here,
+I strongly advise to put the folders "controllers", "core", "models" and
+"views" outside the document root and, if possible, remove the write access.
+It will reinforce the security, because the __autoload functionality will try
+to load *anything* that has the right name format from those folders. If an ill
+intentioned user manages to put something in there, you're screwed (however, if
+he/she has gained access to the file system, you're allready screwed anyway).
+
+
+
+5. Files where you have to mess around
+======================================
+
+In "index.php", you just have to adjust the path to the App class (if you
+followed my previous advice).
+
+In "core/App.class.php" you have to adjust the paths in the set_include_path
+instruction in the constructor (again, if you followed my previous advice).
+
+In "core/PDOSingleton.class.php", as previously stated, you have to adjust
+database connection data.
+
+That's pretty much it. You'll have a fully functional blog by now.
+
+
+
+6. Random notes
+===============
+
+The files in "views/default" are the external parts of the rest of the views.
+They contain the head and, in the front-end, the sidebar.
+
+The "core" classes are fairly well documented, but I'll give you a quick
+roundup:
+
+	App					This doubles as a request router, and configuration
+						container. In both those aspects, it could be greatly
+						expanded but specially so on configuration (for
+						instance, it could hold database connection data).
+
+	Formen				This is a quick and dirty ORM engine. It features lazy
+						loading, relational model loading (ie, using an object
+						of the Post model, you can call comments directly, it
+						"knows" which comments belong to the post you're
+						dealing with), selective updates, secure bulk setter,
+						paginator support, and other little pearls.
+
+						For the time it took to put together, I'm pretty
+						satisfied with the feature set. However, it's not
+						even close to a full blown ORM, to the likes of those
+						found in mature frameworks (did I mention you shouldn't
+						reinvent the wheel like I did here?).
+
+						I did, however, iteratively added functionality and I
+						could overlooked some comments in obscure sections. If
+						something is not entirely clear, feel free to drop me a
+						line.
+
+	ModelMultiFactory	This provides a factory for many objects of the same
+						model. It's not to be instantiated directly, but
+						returned from certain Formen methods. It provides most
+						of the functionality of PHP native arrays (you can
+						"foreach" through it) except is_array (because, you
+						know, it really isn't one).
+
+	PDOSingleton		Pretty straightforward class, a singleton that returns
+						a PDO connection.
+
+	Paginator			Again, a very simple class that helps with item
+						pagination (to build the paginator itself and to limit
+						the queries).
+
+	WebUser				This is probably the most stupid thing I've done in
+						respect to the challenge. It's correct, from an
+						application architecture point of view, but it's a
+						mother load of lines, just to make "best practices"
+						session handling.
+
+						If I had used simple session handling, I could've saved
+						a bunch of lines. And, after all, how many webapps are
+						floating around just like that? I just wanted to do
+						"The Right Thing" and ended up (probably, didn't count
+						those lines yet) eating away the 500 line mark.
+
+It has no JavaScript whatsoever. However, it's fairly simple to integrate, for
+instance, the TinyMCE rich text editor. Just plug it to the textarea in post
+administration for extra functionality.
+
+The CSS is made with SASS/Compass. I provide the "compiled" CSS sheet, the
+originating SCSS files and even the Ruby configuration file for Compass. Again,
+remember that CSS doesn't count towards the challenge limit.
+
+It lacks a few styles, though. For instance, the sticky posts in the front-end
+are no diferent than the regular ones - they should. The class is allready
+there, just style it.
+
+The rest of the files should be self-explanatory. If something is not clear,
+please alert me.
+
+Also, if you make something real out of this, drop me a line; I'll have a blast
+just knowing that someone could turn this proof-of-concept into something
+decent.

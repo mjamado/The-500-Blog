@@ -6,7 +6,7 @@
 2. Disclaimer
 3. The challenge
 4. Installation
-5. Files where you have to mess around
+5. Files you have to mess around
 6. Random notes
 
 
@@ -110,7 +110,7 @@ he/she has gained access to the file system, you're allready screwed anyway).
 
 
 
-5. Files where you have to mess around
+5. Files you have to mess around
 ======================================
 
 In "index.php", you just have to adjust the path to the App class (if you

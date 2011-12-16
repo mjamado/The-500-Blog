@@ -196,6 +196,9 @@ It lacks a few styles, though. For instance, the sticky posts in the front-end
 are no diferent than the regular ones - they should. The class is allready
 there, just style it.
 
+The entire blog system doesn't use any image. The only image in images folder
+is a grid created by Compass. Everything else is pure CSS.
+
 The rest of the files should be self-explanatory. If something is not clear,
 please alert me.
 

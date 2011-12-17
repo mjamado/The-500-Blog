@@ -1,5 +1,4 @@
-<?php class CategoryAdminController
-{
+<?php class CategoryAdminController {
 	private $title = "Categories";
 	public function Index() {
 		$page = empty($_GET['page']) ? 1 : $_GET['page'];

@@ -34,7 +34,5 @@
 	<?php else: ?>
 	<p>There's no post to show.</p>
 	<?php endif; ?>
-	<aside>
-		<a href="/admin/Post/Add" title="Add new post">Add new post</a>
-	</aside>
+	<aside><a href="/admin/Post/Add" title="Add new post">Add new post</a></aside>
 </section>

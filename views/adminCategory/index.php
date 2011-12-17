@@ -28,7 +28,5 @@
 	<?php else: ?>
 	<p>There's no categories to show.</p>
 	<?php endif; ?>
-	<aside>
-		<a href="/admin/Category/Add" title="Add new category">Add new category</a>
-	</aside>
+	<aside><a href="/admin/Category/Add" title="Add new category">Add new category</a></aside>
 </section>

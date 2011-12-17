@@ -1,99 +1,55 @@
-<?php
-class PostAdminController
-{
+<?php class PostAdminController {
 	private $title = "Posts";
-
-	public function Index()
-	{
+	public function Index() {
 		$page = empty($_GET['page']) ? 1 : $_GET['page'];
 		$orderBy = empty($_GET['orderby']) ? 'posted' : $_GET['orderby'];
 		$orderDir = empty($_GET['orderdir']) ? 'DESC' : $_GET['orderdir'];
-
 		$obj = new Post();
 		$items = $obj->GetAll(null, array($orderBy, $orderDir), array('page' => $page, 'numItemsPage' => 20));
 		$paginator = $items->paginator;
-
 		$view = 'adminPost/index.php';
 		require_once('default/adminMaster.php');
 	}
-
-	public function Edit()
-	{
+	public function Edit() {
 		$id = empty($_GET['id']) ? 0 : $_GET['id'];
-
 		$post = new Post($id);
-
-		if(!empty($_POST['post']) && is_array($_POST['post']))
-		{
+		if(!empty($_POST['post']) && is_array($_POST['post'])) {
 			$post->data = $_POST['post'];
 			$post->Save();
-
-			if(!empty($_POST['category']) && is_array($_POST['category']))
-				$post->SetNMRelated('categories', $_POST['category']);
-
+			if(!empty($_POST['category']) && is_array($_POST['category'])) $post->SetNMRelated('categories', $_POST['category']);
 			header('Location: /admin/Post/');
 			exit();
 		}
-
 		$obj = new Category();
 		$allCategories = $obj->GetAll(null, array('title', 'ASC'));
 		$categories = array();
-
 		$myCategories = $post->categories;
 		$myCategoriesIds = array();
-		if(count($myCategories) > 0)
-			foreach($myCategories as $cat)
-				$myCategoriesIds[] = $cat->id;
-
-		if(count($allCategories) > 0)
-			foreach($allCategories as $cat)
-				$categories[] = array(
-					'id' => $cat->id,
-					'title' => $cat->title,
-					'checked' => in_array($cat->id, $myCategoriesIds)
-				);
-
+		if(count($myCategories) > 0) foreach($myCategories as $cat) $myCategoriesIds[] = $cat->id;
+		if(count($allCategories) > 0) foreach($allCategories as $cat) $categories[] = array('id' => $cat->id,'title' => $cat->title,'checked' => in_array($cat->id, $myCategoriesIds));
 		$view = 'adminPost/details.php';
 		require_once('default/adminMaster.php');
 	}
-
-	public function Add()
-	{
-		if(!empty($_POST['post']) && is_array($_POST['post']))
-		{
+	public function Add() {
+		if(!empty($_POST['post']) && is_array($_POST['post'])) {
 			$post = new Post();
 			$post->data = $_POST['post'];
 			$post->Save();
-
 			header('Location: /admin/Post/');
 			exit();
 		}
-
 		$obj = new Category();
 		$allCategories = $obj->GetAll(null, array('title', 'ASC'));
 		$categories = array();
-
-		if(count($allCategories) > 0)
-			foreach($allCategories as $cat)
-				$categories[] = array(
-					'id' => $cat->id,
-					'title' => $cat->title,
-					'checked' => false
-				);
-
+		if(count($allCategories) > 0) foreach($allCategories as $cat) $categories[] = array('id' => $cat->id,'title' => $cat->title,'checked' => false);
 		$view = 'adminPost/details.php';
 		require_once('default/adminMaster.php');
 	}
-
-	public function Delete()
-	{
+	public function Delete() {
 		$id = empty($_GET['id']) ? 0 : $_GET['id'];
-
 		$post = new Post($id);
 		$post->ToDelete();
-
 		header('Location: /admin/Post/');
 		exit();
 	}
-}
-?>
+} ?>

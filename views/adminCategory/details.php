@@ -11,12 +11,8 @@
 				<label for="slug">Slug</label>
 				http://<?php echo $_SERVER['SERVER_NAME']; ?>/Category/<input type="text" name="category[slug]" id="slug" value="<?php echo isset($category->slug) ? $category->slug : '' ?>" />
 			</li>
-			<li>
-				<input type="submit" value="Submit" alt="Submit" />
-			</li>
-			<li>
-				<a class="formBtn" href="/admin/Category/" title="Back to Category listing">Go back to Category listing</a>
-			</li>
+			<li><input type="submit" value="Submit" alt="Submit" /></li>
+			<li><a class="formBtn" href="/admin/Category/" title="Back to Category listing">Go back to Category listing</a></li>
 		</ul>
 	</form>
 </section>

@@ -5,9 +5,7 @@
 	<h1>Comments</h1>
 	<?php foreach($post->comments as $comment): ?>
 	<div>
-		<div id="comment<?php $comment->id; ?>">
-			<?php echo date_format(date_create($comment->posted), "l, j<\s\u\p>S</\s\u\p> F Y @ H:i"); ?> by <strong><?php if(!empty($comment->url)): ?><a href="<?php echo $comment->url; ?>" title="<?php echo $comment->screenName; ?>'s website"><?php echo $comment->screenName; ?></a><?php else: ?><?php echo $comment->screenName; ?><?php endif; ?></strong>
-		</div>
+		<div id="comment<?php $comment->id; ?>"><?php echo date_format(date_create($comment->posted), "l, j<\s\u\p>S</\s\u\p> F Y @ H:i"); ?> by <strong><?php if(!empty($comment->url)): ?><a href="<?php echo $comment->url; ?>" title="<?php echo $comment->screenName; ?>'s website"><?php echo $comment->screenName; ?></a><?php else: ?><?php echo $comment->screenName; ?><?php endif; ?></strong></div>
 		<p><?php echo $comment->content; ?></p>
 	</div>
 	<?php endforeach; ?>
@@ -28,9 +26,7 @@
 			<label for="content">Comment</label>
 			<textarea name="comment[content]" id="content"></textarea>
 		</li>
-		<li>
-			<input type="submit" value="Submit" alt="Submit" />
-		</li>
+		<li><input type="submit" value="Submit" alt="Submit" /></li>
 	</ul>
 </form>
 <?php endif; ?>

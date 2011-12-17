@@ -37,12 +37,8 @@
 				<label for="screenName">Screen Name</label>
 				<input type="text" name="user[screenName]" id="screenName" value="<?php echo isset($user->screenName) ? $user->screenName : ''; ?>" />
 			</li>
-			<li>
-				<input type="submit" value="Submit" alt="Submit" />
-			</li>
-			<li>
-				<a class="formBtn" href="/admin/User/" title="Back to User listing">Go back to User listing</a>
-			</li>
+			<li><input type="submit" value="Submit" alt="Submit" /></li>
+			<li><a class="formBtn" href="/admin/User/" title="Back to User listing">Go back to User listing</a></li>
 		</ul>
 	</form>
 </section>

@@ -28,25 +28,15 @@
 				<textarea name="post[content]" id="content"><?php echo isset($post->content) ? $post->content : ''; ?></textarea>
 			</li>
 			<li class="separator">Categories</li>
-			<?php
-				if(isset($categories) && (count($categories) > 0)):
-					foreach($categories as $cat):
-			?>
+			<?php if(isset($categories) && (count($categories) > 0)): foreach($categories as $cat): ?>
 			<li class="checklist">
 				<input type="checkbox" name="category[<?php echo $cat['id'] ?>][new]" id="cat_<?php echo $cat['id']; ?>" value="1" <?php if($cat['checked']): ?>checked="checked"<?php endif; ?> />
 				<label for="cat_<?php echo $cat['id']; ?>"><?php echo $cat['title']; ?></label>
 				<input type="hidden" name="category[<?php echo $cat['id']; ?>][old]" value="<?php echo (($cat['checked']) ? 1 : 0); ?>" />
 			</li>
-			<?php
-					endforeach;
-				endif;
-			?>
-			<li>
-				<input type="submit" value="Submit" alt="Submit" />
-			</li>
-			<li>
-				<a class="formBtn" href="/admin/Post/" title="Back to Post listing">Go back to Post listing</a>
-			</li>
+			<?php endforeach; endif; ?>
+			<li><input type="submit" value="Submit" alt="Submit" /></li>
+			<li><a class="formBtn" href="/admin/Post/" title="Back to Post listing">Go back to Post listing</a></li>
 		</ul>
 	</form>
 </section>

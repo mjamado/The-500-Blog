@@ -12,10 +12,7 @@
 <?php endif; ?>
 <?php if(isset($posts) && (count($posts) > 0)): ?>
 <section>
-	<?php
-		foreach($posts as $post)
-			require("_post.php");
-	?>
+	<?php foreach($posts as $post) require("_post.php"); ?>
 	<?php include('widgets/paginator.php') ?>
 </section>
 <?php endif; ?>

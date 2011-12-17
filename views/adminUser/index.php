@@ -34,7 +34,5 @@
 	<?php else: ?>
 	<p>There are no users (nobody should ever see this).</p>
 	<?php endif; ?>
-	<aside>
-		<a href="/admin/User/Add" title="Add new user">Add new user</a>
-	</aside>
+	<aside><a href="/admin/User/Add" title="Add new user">Add new user</a></aside>
 </section>

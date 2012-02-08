@@ -79,8 +79,7 @@ after the flamewar, the challenge followed in this one²):
 
 First I said it wouldn't fit if I followed best practices. When I started
 (with best practices), I reviewed my position to "it might fit". Near
-completion, again I think it won't fit (as of this writing, I have yet to
-remove comments, extra line breaks and "flag style" the brackets in this code).
+completion, again I thought it wouldn't fit; and it didn't. I topped at 1127 lines.
 
 ¹ http://www.portugal-a-programar.org/forum/index.php/topic,60815.0.html
 ² http://www.portugal-a-programar.org/forum/index.php/topic,60822.0.html
@@ -175,14 +174,14 @@ roundup:
 	WebUser				This is probably the most stupid thing I've done in
 						respect to the challenge. It's correct, from an
 						application architecture point of view, but it's a
-						mother load of lines, just to make "best practices"
+						motherload of lines, just to make "best practices"
 						session handling.
 
 						If I had used simple session handling, I could've saved
 						a bunch of lines. And, after all, how many webapps are
 						floating around just like that? I just wanted to do
-						"The Right Thing" and ended up (probably, didn't count
-						those lines yet) eating away the 500 line mark.
+						"The Right Thing" and ended up eating away the 500 line
+						mark.
 
 It has no JavaScript whatsoever. However, it's fairly simple to integrate, for
 instance, the TinyMCE rich text editor. Just plug it to the textarea in post
